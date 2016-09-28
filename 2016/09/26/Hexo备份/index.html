@@ -74,7 +74,7 @@
     </p>
   <p class="article-time">
     <time datetime="2016-09-26T08:20:44.000Z" itemprop="datePublished">2016-09-26</time>
-    更新日期:<time datetime="2016-09-28T09:39:26.264Z" itemprop="dateModified">2016-09-28</time>
+    更新日期:<time datetime="2016-09-28T09:40:48.178Z" itemprop="dateModified">2016-09-28</time>
     
   </p>
 </header>
@@ -83,7 +83,7 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
-		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、需求："><span class="toc-number">1.</span> <span class="toc-text">一、需求：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、思路"><span class="toc-number">2.</span> <span class="toc-text">二、思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、搭建的流程"><span class="toc-number">3.</span> <span class="toc-text">三、搭建的流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四、日常的改动流程"><span class="toc-number">4.</span> <span class="toc-text">四、日常的改动流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#五、恢复"><span class="toc-number">5.</span> <span class="toc-text">五、恢复</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#先安装hexo"><span class="toc-number"></span> <span class="toc-text">先安装hexo</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#存在github上的git-clone下来"><span class="toc-number"></span> <span class="toc-text">存在github上的git clone下来</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#项目文件夹下npm"><span class="toc-number"></span> <span class="toc-text">项目文件夹下npm</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#参考链接"><span class="toc-number">0.1.</span> <span class="toc-text">参考链接</span></a></li></ol></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、需求："><span class="toc-number">1.</span> <span class="toc-text">一、需求：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、思路"><span class="toc-number">2.</span> <span class="toc-text">二、思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、搭建的流程"><span class="toc-number">3.</span> <span class="toc-text">三、搭建的流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四、日常的改动流程"><span class="toc-number">4.</span> <span class="toc-text">四、日常的改动流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#五、恢复"><span class="toc-number">5.</span> <span class="toc-text">五、恢复</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#参考链接"><span class="toc-number">5.1.</span> <span class="toc-text">参考链接</span></a></li></ol></li></ol>
 		</div>
 		
 		<h3 id="一、需求："><a href="#一、需求：" class="headerlink" title="一、需求："></a>一、需求：</h3><p>在Windows和Mac下需要对Hexo进行管理和更新。</p>
@@ -105,12 +105,15 @@
 <li>然后才执行hexo g -d发布网站到master分支上。</li>
 </ol>
 <h3 id="五、恢复"><a href="#五、恢复" class="headerlink" title="五、恢复"></a>五、恢复</h3><p>当重装电脑之后，或者想在其他电脑上修改博客，可以使用下列步骤：</p>
-<h1 id="先安装hexo"><a href="#先安装hexo" class="headerlink" title="先安装hexo"></a>先安装hexo</h1><pre><code>$ npm install -g hexo-cli
-</code></pre><h1 id="存在github上的git-clone下来"><a href="#存在github上的git-clone下来" class="headerlink" title="存在github上的git clone下来"></a>存在github上的git clone下来</h1><pre><code>git clone git@github.com:LJaer/ljaer.github.io
-</code></pre><h1 id="项目文件夹下npm"><a href="#项目文件夹下npm" class="headerlink" title="项目文件夹下npm"></a>项目文件夹下npm</h1><pre><code>$ cd 项目名/
-$ npm install --no-bin-links
-$ npm install hexo-deployer-git
-</code></pre><p>#重新配置github和coding的公钥</p>
+<ul>
+<li><p>先安装hexo<br>  $ npm install -g hexo-cli</p>
+</li>
+<li><p>存在github上的git clone下来<br>  git clone git@github.com:LJaer/ljaer.github.io</p>
+</li>
+<li><p>项目文件夹下npm<br>  $ cd 项目名/<br>  $ npm install –no-bin-links<br>  $ npm install hexo-deployer-git</p>
+</li>
+</ul>
+<p>-重新配置github和coding的公钥</p>
 <h4 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h4><p>hexo的备份和恢复：<a href="http://jizailog.com/2016/06/13/hexo-backup/" target="_blank" rel="external">http://jizailog.com/2016/06/13/hexo-backup/</a></p>
   
 	</div>
@@ -169,7 +172,7 @@ $ npm install hexo-deployer-git
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
-  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、需求："><span class="toc-number">1.</span> <span class="toc-text">一、需求：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、思路"><span class="toc-number">2.</span> <span class="toc-text">二、思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、搭建的流程"><span class="toc-number">3.</span> <span class="toc-text">三、搭建的流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四、日常的改动流程"><span class="toc-number">4.</span> <span class="toc-text">四、日常的改动流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#五、恢复"><span class="toc-number">5.</span> <span class="toc-text">五、恢复</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#先安装hexo"><span class="toc-number"></span> <span class="toc-text">先安装hexo</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#存在github上的git-clone下来"><span class="toc-number"></span> <span class="toc-text">存在github上的git clone下来</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#项目文件夹下npm"><span class="toc-number"></span> <span class="toc-text">项目文件夹下npm</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#参考链接"><span class="toc-number">0.1.</span> <span class="toc-text">参考链接</span></a></li></ol></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、需求："><span class="toc-number">1.</span> <span class="toc-text">一、需求：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、思路"><span class="toc-number">2.</span> <span class="toc-text">二、思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、搭建的流程"><span class="toc-number">3.</span> <span class="toc-text">三、搭建的流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四、日常的改动流程"><span class="toc-number">4.</span> <span class="toc-text">四、日常的改动流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#五、恢复"><span class="toc-number">5.</span> <span class="toc-text">五、恢复</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#参考链接"><span class="toc-number">5.1.</span> <span class="toc-text">参考链接</span></a></li></ol></li></ol>
   </div>
 
 <div id="asidepart">
