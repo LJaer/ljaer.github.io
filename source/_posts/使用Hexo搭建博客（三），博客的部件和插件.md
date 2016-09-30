@@ -98,8 +98,8 @@ baidusitemap:
 
 ### 2.添加『CNZZ统计』
 　　CNZZ统计不算是Hexo的插件，但我个人觉得还是充当了插件的作用，所以就放在了这里。做法是先注册账号，然后添加网址就设置好了。
-1.在CNZZ网站注册一个账号，添加网站后，得到各个形式的代码，任选其一；
-2.在Hexo\themes\pacman\layout\_partial文件夹下新建一个cnzz_tongji.ejs文件，把你的代码粘贴在第一行和最后一行之间（中间是我的，替换成你自己的）；
+- 1.在CNZZ网站注册一个账号，添加网站后，得到各个形式的代码，任选其一；
+- 2.在Hexo\themes\pacman\layout\_partial文件夹下新建一个cnzz_tongji.ejs文件，把你的代码粘贴在第一行和最后一行之间（中间是我的，替换成你自己的）；
  
 ```html
 <% if (theme.cnzz){ %>
@@ -112,7 +112,7 @@ document.write(unescape("%3Cspan id='cnzz_stat_icon_1260464597'%3E%3C/span%3E%3C
 <% } %>
 ```
 
-3.在footer.ejs文件中适当的位置添加你的代码，这是我的代码；
+- 3.在footer.ejs文件中适当的位置添加你的代码，这是我的代码；
 ```html
 <script type="text/javascript">var cnzz_protocol = (("https:" == 
 document.location.protocol) ? " https://" : " http://");
@@ -122,7 +122,7 @@ document.write(unescape("%3Cspan id='cnzz_stat_icon_1260464597'%3E%3C/span%3E%3C
 </script>
 ```
 
-4.在主题配置文件中加入下面代码启用CNZZ统计，注意不要添加站点id，填了的话就不显示图标了。
+- 4.在主题配置文件中加入下面代码启用CNZZ统计，注意不要添加站点id，填了的话就不显示图标了。
 ```
 #### Analytics
 cnzz_tongji: true
