@@ -1,0 +1,361 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>使用Hexo搭建博客（一），搭建博客的过程 | 冗码生涯</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="LJaer">
+    
+    <meta name="description" content="1.安装Git　　根据系统（Win，Mac，Linux）选择相应的git进行安装
+　　注册Github账号　　因为是托管到Github上，所以需要注册一个账号。　　注意一定要验证Github的验证邮件
+　　配置SSH公钥　　远程代码是基于SSH的，所以需要SSH的相关配置。方法是先在本地生成SSH公">
+    
+    
+    
+    
+    <link rel="alternate" href="http://blog.csdn.net/zk673820543" title="冗码生涯" type="application/atom+xml">
+    
+    
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.svg" alt="冗码生涯" title="冗码生涯"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="冗码生涯">冗码生涯</a></h1>
+				<h2 class="blog-motto">只有做不好事的人，没有做不好的事</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/archives">归档</a></li>
+					
+						<li><a href="/about">关于</a></li>
+					
+					<li>
+					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/09/24/使用Hexo搭建博客（一），搭建博客的过程/" title="使用Hexo搭建博客（一），搭建博客的过程" itemprop="url">使用Hexo搭建博客（一），搭建博客的过程</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://yoursite.com" title="LJaer">LJaer</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2016-09-24T03:30:13.000Z" itemprop="datePublished">2016-09-24</time>
+    更新日期:<time datetime="2016-09-29T02:30:55.679Z" itemprop="dateModified">2016-09-29</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-安装Git"><span class="toc-number">1.</span> <span class="toc-text">1.安装Git</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-安装Node-js"><span class="toc-number">2.</span> <span class="toc-text">2.安装Node.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-安装Hexo"><span class="toc-number">3.</span> <span class="toc-text">3.安装Hexo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-创建Hexo文件夹并初始化Hexo"><span class="toc-number">4.</span> <span class="toc-text">4.创建Hexo文件夹并初始化Hexo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-安装依赖包"><span class="toc-number">5.</span> <span class="toc-text">5.安装依赖包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-预览本地博客"><span class="toc-number">6.</span> <span class="toc-text">6.预览本地博客</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-建立和用户名对应的仓库"><span class="toc-number">7.</span> <span class="toc-text">7.建立和用户名对应的仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-部署远程博客"><span class="toc-number">8.</span> <span class="toc-text">8.部署远程博客</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-Hexo的基本命令"><span class="toc-number">9.</span> <span class="toc-text">9.Hexo的基本命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10、注意"><span class="toc-number">10.</span> <span class="toc-text">10、注意</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考链接"><span class="toc-number">11.</span> <span class="toc-text">参考链接</span></a></li></ol>
+		</div>
+		
+		<h3 id="1-安装Git"><a href="#1-安装Git" class="headerlink" title="1.安装Git"></a>1.安装<a href="https://git-scm.com/" title="Git" target="_blank" rel="external">Git</a></h3><p>　　根据系统（Win，Mac，Linux）选择相应的git进行安装</p>
+<p>　　<a href="https://github.com/" title="注册" target="_blank" rel="external">注册</a>Github账号<br>　　因为是托管到Github上，所以需要注册一个账号。<br>　　注意一定要验证Github的验证邮件</p>
+<p>　　配置SSH公钥<br>　　远程代码是基于SSH的，所以需要SSH的相关配置。方法是先在本地生成SSH公钥，然后添加到Github上面。具体的操作如下：<br>　　设置你的邮箱和用户名：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git config --global user.email &quot;673820543@qq.com&quot;</div><div class="line">git config --global user.name &quot;LJaer&quot;</div></pre></td></tr></table></figure></p>
+<p>　　生成密钥，设置密码，输入的密码不显示（也可以不设置，按三次回车，密码为空）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C &quot;673820543@qq.com&quot;</div></pre></td></tr></table></figure></p>
+<p>　　上述的命令成功后，会得到id_rsa和id_rsa.pub两个文件，可能在C:\Users\Administrator.ssh文件夹里，没有的话，就用Everything搜一下。<br>　　把SSH密钥添加到Github上<br>　　登陆Github后，点击settings，然后进入SSH keys，把id_rsa.pub文件里内容添加进去就好了。</p>
+<h3 id="2-安装Node-js"><a href="#2-安装Node-js" class="headerlink" title="2.安装Node.js"></a>2.安装<a href="https://nodejs.org/en/" title="Node.js" target="_blank" rel="external">Node.js</a></h3><p>　　选择LTS版本进行安装</p>
+<h3 id="3-安装Hexo"><a href="#3-安装Hexo" class="headerlink" title="3.安装Hexo"></a>3.安装Hexo</h3><p>　　Hexo的安装需要借助Node.js的npm命令，可以理解为Hexo是Node.js的模块。操作的方式是在任意的位置单击鼠标右键，选择Git bash命令，在里面输入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g hexo</div></pre></td></tr></table></figure></p>
+<p>　　卸载的话，自然是把上面命令中的install替换成uninstall即可执行卸载。</p>
+<h3 id="4-创建Hexo文件夹并初始化Hexo"><a href="#4-创建Hexo文件夹并初始化Hexo" class="headerlink" title="4.创建Hexo文件夹并初始化Hexo"></a>4.创建Hexo文件夹并初始化Hexo</h3><p>　　Hexo文件夹就是你后面博客的文件夹。第一步先在某个盘符下新建一个文件夹，重命名（英文字母），假设你是在D盘下建立了一个名叫Hexo的文件夹，那么路径就是D:\hexo （后续的操作大多在这个文件夹里进行）；第二步进入Hexo文件夹单击右键，依旧选择Git bash这一命令，输入以下命令，博客所需要的文件都已经自动建立好了，这比jekyll操作简单多了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo init</div></pre></td></tr></table></figure></p>
+<h3 id="5-安装依赖包"><a href="#5-安装依赖包" class="headerlink" title="5.安装依赖包"></a>5.安装依赖包</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install</div></pre></td></tr></table></figure>
+<h3 id="6-预览本地博客"><a href="#6-预览本地博客" class="headerlink" title="6.预览本地博客"></a>6.预览本地博客</h3><p>　　一系列的安装命令之后，本地博客就算搭建好了，输入如下的命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo g</div><div class="line">hexo s</div></pre></td></tr></table></figure></p>
+<p>　　然后在浏览器地址栏中输入localhost:4000或者127.0.0.1:4000就可以查看本地的博客了。</p>
+<p>　　不出意外的话，它应该是像下图这个样子的（图片来源于网络）。注意这里仅仅是本地博客，其他地方看不到。第一步操作到这里就结束了。</p>
+<p><img src="http://oe53dpmqz.bkt.clouddn.com/20160929002.png" alt="201909002"></p>
+<h3 id="7-建立和用户名对应的仓库"><a href="#7-建立和用户名对应的仓库" class="headerlink" title="7.建立和用户名对应的仓库"></a>7.建立和用户名对应的仓库</h3><p>　　建立和用户名相对应的仓库，比如：我的用户名是LJaer,那么我的仓库就必须是ljaer.github.io。</p>
+<h3 id="8-部署远程博客"><a href="#8-部署远程博客" class="headerlink" title="8.部署远程博客"></a>8.部署远程博客</h3><p>　　编辑Hexo目录下的配置文件_config.yml,在最下面输入以下内容，注意把里面的LJaer替换成你的用户名<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo: git@github.com:LJaer/ljaer.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure></p>
+<p>　　部署远程博客，输入以下命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo g</div><div class="line">hexo d</div></pre></td></tr></table></figure></p>
+<p>　　出现下面的提示表示部署成功<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">INFO Deploy done: git</div></pre></td></tr></table></figure></p>
+<p>　　部署好了后，在浏览器地址栏中输入你的仓库名来访问，我的是ljaer.github.io。注意一点，第一次部署的话，可能需要等待一会（一般不到10分钟就好了）才能生效，以后每次部署就可以直接访问。到这里基本的博客就搭建好了。</p>
+<h3 id="9-Hexo的基本命令"><a href="#9-Hexo的基本命令" class="headerlink" title="9.Hexo的基本命令"></a>9.Hexo的基本命令</h3><p>　　Hexo基本常用的命令就四个，而且还可以使用组合命令。基本命令如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">hexo g = hexo generate  #生成</div><div class="line">hexo s = hexo server  #启动本地预览</div><div class="line">hexo d = hexo deploy  #远程部署</div><div class="line">hexo n &quot;文章标题&quot; = hexo new &quot;文章标题&quot;  #新建一篇博文</div></pre></td></tr></table></figure></p>
+<p>　　组合命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo s -g  #等同先输入hexo g，再输入hexo s</div><div class="line">hexo d -g  #等同先输入hexo g，再输入hexo d</div></pre></td></tr></table></figure></p>
+<h3 id="10、注意"><a href="#10、注意" class="headerlink" title="10、注意"></a>10、注意</h3><p>　　出现其他任何的问题，先删除博客目录下的db.json文件，然后清理再部署远程博客，操作时输入以下的命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo clean</div><div class="line">hexo d -g</div></pre></td></tr></table></figure></p>
+<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><p>在搭建过程中，参考以下文章进行搭建</p>
+<p>起今执行：<a href="http://www.jianshu.com/notebooks/1045230/latest" target="_blank" rel="external">http://www.jianshu.com/notebooks/1045230/latest</a></p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Hexo/">Hexo</a>
+  </div>
+
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/技术文档/">技术文档</a>
+</div>
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://yoursite.com/2016/09/24/使用Hexo搭建博客（一），搭建博客的过程/" data-title="使用Hexo搭建博客（一），搭建博客的过程 | 冗码生涯" data-tsina="2554366815" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2016/09/26/使用Hexo搭建博客（四），Hexo备份与恢复/" title="使用Hexo搭建博客（四），Hexo备份与恢复">
+  <strong>PREVIOUS:</strong><br/>
+  <span>
+  使用Hexo搭建博客（四），Hexo备份与恢复</span>
+</a>
+</div>
+
+
+</nav>
+
+	
+<section class="comment">
+	<div class="ds-thread"></div>
+</section>
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-安装Git"><span class="toc-number">1.</span> <span class="toc-text">1.安装Git</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-安装Node-js"><span class="toc-number">2.</span> <span class="toc-text">2.安装Node.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-安装Hexo"><span class="toc-number">3.</span> <span class="toc-text">3.安装Hexo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-创建Hexo文件夹并初始化Hexo"><span class="toc-number">4.</span> <span class="toc-text">4.创建Hexo文件夹并初始化Hexo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-安装依赖包"><span class="toc-number">5.</span> <span class="toc-text">5.安装依赖包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-预览本地博客"><span class="toc-number">6.</span> <span class="toc-text">6.预览本地博客</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-建立和用户名对应的仓库"><span class="toc-number">7.</span> <span class="toc-text">7.建立和用户名对应的仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-部署远程博客"><span class="toc-number">8.</span> <span class="toc-text">8.部署远程博客</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-Hexo的基本命令"><span class="toc-number">9.</span> <span class="toc-text">9.Hexo的基本命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10、注意"><span class="toc-number">10.</span> <span class="toc-text">10、注意</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考链接"><span class="toc-number">11.</span> <span class="toc-text">参考链接</span></a></li></ol>
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+			<li><a href="/categories/技术文档/" title="技术文档">技术文档<sup>6</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+      <li><a href="http://blog.csdn.net/zk673820543" target="_blank" title="CSDN">zk的CSDN博客</a></li>
+      <li><a href="https://github.com/LJaer" target="_blank" title="GitHub">LJaer的github</a></li>
+    </ul>
+</div>
+
+
+  
+  <div class="tagcloudlist">
+    <p class="asidetitle">标签云</p>
+    <div class="tagcloudlist clearfix">
+       <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/MarkDown/" style="font-size: 10px;">MarkDown</a>
+    </div>
+  </div>
+
+
+  <div class="rsspart">
+	<a href="http://blog.csdn.net/zk673820543" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+  <iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=5&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=2554366815&verifier=ca88b5c6&dpc=1"></iframe>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<div class="social-font clearfix">
+		
+		<a href="http://weibo.com/2554366815" target="_blank" title="weibo"></a>
+		
+		
+		
+		<a href="https://github.com/LJaer" target="_blank" title="github"></a>
+		
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2016 
+		
+		<a href="http://yoursite.com" target="_blank" title="LJaer">LJaer</a>
+		
+		<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260464597'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1260464597%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"null"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+  </body>
+</html>
