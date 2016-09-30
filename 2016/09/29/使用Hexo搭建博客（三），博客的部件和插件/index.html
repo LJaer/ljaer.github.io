@@ -72,7 +72,7 @@
     </p>
   <p class="article-time">
     <time datetime="2016-09-29T03:17:20.000Z" itemprop="datePublished">2016-09-29</time>
-    更新日期:<time datetime="2016-09-30T00:59:16.947Z" itemprop="dateModified">2016-09-30</time>
+    更新日期:<time datetime="2016-09-30T01:13:51.555Z" itemprop="dateModified">2016-09-30</time>
     
   </p>
 </header>
@@ -88,17 +88,14 @@
 <p>　　在pacman/_config.yml文件中，添加links<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">widgets: </div><div class="line">- links</div></pre></td></tr></table></figure></p>
 <h3 id="2-添加『新浪微博秀』"><a href="#2-添加『新浪微博秀』" class="headerlink" title="2.添加『新浪微博秀』"></a>2.添加<a href="http://app.weibo.com/tool/weiboshow" title="『新浪微博秀』" target="_blank" rel="external">『新浪微博秀』</a></h3><p>　　微博秀这个可以根据个人的意愿。先在<a href="http://app.weibo.com/tool/weiboshow" title="微博秀" target="_blank" rel="external">微博秀</a>开通一下。获取到如下代码：把得到的代码直接保存到pacman/layout/_widget/weibo.ejs文件里，没有就新建一个；在主题配置文件pacman/_config.yml的部件里加上微博秀。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">widgets:</div><div class="line">- weibo</div></pre></td></tr></table></figure></p>
 <h3 id="3-添加『JiaThis分享』"><a href="#3-添加『JiaThis分享』" class="headerlink" title="3.添加『JiaThis分享』"></a>3.添加<a href="http://www.jiathis.com/" title="『JiaThis分享』" target="_blank" rel="external">『JiaThis分享』</a></h3><p>　　博客在前期需要大量推广，即使你写的文章再好，别人也不一定能看到，或者别人看到了也不会认真阅读，这是正常的。不妨主动自己主动一点，把自己的文章推广一下，也能帮助自己博客提高访问量。微博、微信和QQ空间都是很好的传播平台，需要利用好。所以就需要一键分享的功能。不少人用的百度的，但个人对JiaThis更感兴趣一点。样式多，支持平台多，重要的是方便。<br>注册之后得到了id，把id添加到pacman/layout/_partial/post/jiathis.ejs文件中；没改动的话是在第22行的uid那里。<br>再在主题配置文件中jiathis的enable改为true启用，也同样填上id。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">#### Share button</div><div class="line">jiathis:</div><div class="line">  enable: true ## if you use jiathis as your share tool,the built-in share tool won&apos;t be display.</div><div class="line">  id: 2111669   ## e.g. 1501277 your jiathis ID. </div><div class="line">  tsina: 2554366815 ## e.g. 1664838973 Your weibo id,It will be used in share button.</div></pre></td></tr></table></figure></p>
-<h3 id="4-添加『多说评论』"><a href="#4-添加『多说评论』" class="headerlink" title="4.添加『多说评论』"></a>4.添加『多说评论』</h3><p>　　评论系统国内使用比较多的是多说，先注册一下，然后在主题配置文件中填上你的用户名；<br>在多说进行注册，获得通用代码，将通用代码粘贴到pacman\layout_partial\post\comment.ejs文件里面；<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;% if (theme.duoshuo.enable &amp;&amp; page.comments)&#123; %&gt;</div><div class="line">&lt;section class=&quot;comment&quot;&gt;</div><div class="line">    #此处粘贴你的通用代码</div><div class="line">&lt;/section&gt;</div><div class="line">&lt;% &#125; %&gt;</div></pre></td></tr></table></figure></p>
-<p>在主题配置文件中，填上你多说的用户名<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">#### Comment</div><div class="line">duoshuo: </div><div class="line">  enable: true  ## duoshuo.com</div><div class="line">  short_name: zk    ## duoshuo short name.</div></pre></td></tr></table></figure></p>
+<h3 id="4-添加『多说评论』"><a href="#4-添加『多说评论』" class="headerlink" title="4.添加『多说评论』"></a>4.添加『多说评论』</h3><p>　　静态博客要使用第三方评论系统，pacman配置了多说评论系统（/themes/pacman/_config.yml），默认关闭，只要将其打开即可:false-&gt;true。直接用你的微博/豆瓣/人人/百度/开心网帐号登录多说，即可发表平评论。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">#### Comment</div><div class="line">duoshuo: </div><div class="line">  enable: true  ## duoshuo.com</div><div class="line">  short_name: ljaer   ## duoshuo short name.即为注册时，域名xxx.duoshuo.com的xxx</div></pre></td></tr></table></figure></p>
 <h3 id="1-添加『微搜索』"><a href="#1-添加『微搜索』" class="headerlink" title="1.添加『微搜索』"></a>1.添加『微搜索』</h3><p>　　现在的文章还不多，使用目录和标签就可以快速找到文章，这是一种方式。对于习惯用搜索的用户来说，特别是后续文章积累到一定的程度之后，想要快速找到自己想看到的文章就比较困难，我自己就希望实现站内搜索的功能。而静态网页和动态的诸如Wordpress不同，内置的谷歌搜索，但是显然在国内直接不能实现站内搜索的，你需要采取其他的措施。查询了一下，使用百度和swiftype都可以为Hexo实现站内搜索。<br>　　swiftype老是提示Please use your work email，注册不成功。这里我使用<a href="http://zn.baidu.com/cse/wiki/index?category_id=17" title="百度站内搜索" target="_blank" rel="external">百度站内搜索</a>。</p>
 <p>1.注册之后得到key，然后把key填到到D:\Hexo\themes\jacman\layout_partial\tinysou_search.ejs文件；<br>1<br>engineKey: ‘’  #e.g.  ‘eb4726b2a0ea6b569b79’<br>2.把主题配置文件_config.yml修改启用，填上你的id就可以。<br>1<br>2<br>3<br>tinysou_search:     ## <a href="http://tinysou.com/" target="_blank" rel="external">http://tinysou.com/</a><br>  enable: true<br>  id:  ## e.g. eb4726b2a0ea6b569b79  for your tiny search id</p>
 <p>二、Hexo的几款插件<br>　　Hexo里面默认有一些插件，这里推荐几款可能对个人有用的插件。输入对应的命令安装一下，然后设置一下就可以。<br>1.导入『Wordpress数据』<br>　　开篇我说过我写博客的基本经历，是从Wordpress转移过来的，写了一段时间之后，文章全部在那里面，如果一篇篇的复制粘贴那工作量就太大了。好在Hexo提供了Wordpress插件，可以一次性把wordpress数据导入到Hexo博客，html文件都转换成了Markdown文件，非常的方便，有图片的更改一下图片的路径就好了。<br>首先导出wordpress数据，得到的回事一个xml格式的文件，先把这个复制到Hexo文件夹下，假设文件是wordpress.xml。<br>安装好wordpress插件，再使用迁移命令就可以实现从Wordpress到Hexo的转移。<br>1<br>2<br>npm install hexo-migrator-wordpress –save<br>hexo migrate wordpress wordpress.xml<br>2.添加『RSS订阅』和『百度sitemap』<br>　　RSS订阅和百度sitemap（站点地图，方便搜索引擎的收录）的安装和设置做法相似，所以放在一起说明。输入的命令分别是：<br>1<br>2<br>npm install hexo-generator-feed –save<br>npm install hexo-generator-baidu-sitemap –save<br>　　然后在博客配置文件_config.yml中添加启动<br>1<br>2<br>3<br>plugins:</p>
 <ul>
 <li>hexo-generator-feed</li>
-<li>hexo-generator-baidu-sitemap<br>　　对于百度地图，还需要添加<br>1<br>2<br>3<br>#sitemap<br>baidusitemap:<br>  path: baidusitemap.xm<br>　　添加好了之后，测试一下RSS和百度地图是否生效，百度地图是访问qjzhixing.com/sitemap.xml可以查看，如果能正常访问说明可用。<br>3.添加『CNZZ统计/百度统计』<br>　　CNZZ统计和百度统计都不算是Hexo的插件，但我个人觉得还是充当了插件的作用，所以就放在了这里。做法是先注册账号，然后添加网址就设置好了。CNZZ和百度统计的设置和做法相似，两种统计我都有测试过，没有问题。是先试过百度的，然后转换到了CNZZ上，所以就那CNZZ作为例子说明一下。<br>1.在CNZZ网站注册一个账号，添加网站后，得到各个形式的代码，任选其一；<br>2.在D:\Hexo\themes\jacman\layout_partial文件夹下新建一个cnzz_tongji.ejs文件，把你的代码粘贴在第一行和最后一行之间（中间是我的，替换成你自己的）；<br>1<br>2<br>3<br>4<br>5<br>6<br>&lt;% if (theme.cnzz){ %&gt;<br><script type="text/javascript"><br>  var cnzz_protocol = ((“https:” == document.location.protocol) ? “ https://“ : “ http://“);<br>  document.write(unescape(“%3Cspan id=’cnzz_stat_icon_1256211004’%3E%3C/span%3E%3Cscript src=’” + cnzz_protocol + “s95.cnzz.com/z_stat.php%3Fid%3D1256211004%26show%3Dpic’ type=’text/javascript’%3E%3C/script%3E”));<br></script><br>&lt;% } %&gt;<br>3.在footer.ejs文件中适当的位置添加你的代码，这是我的代码；<br>1<br>2<br>3<br>4<br><script type="text/javascript"><br>  var cnzz_protocol = ((“https:” == document.location.protocol) ? “ https://“ : “ http://“);<br>  document.write(unescape(“%3Cspan id=’cnzz_stat_icon_1256211004’%3E%3C/span%3E%3Cscript src=’” + cnzz_protocol + “s95.cnzz.com/z_stat.php%3Fid%3D1256211004%26show%3Dpic’ type=’text/javascript’%3E%3C/script%3E”));<br></script><br>4.在主题配置文件中加入下面代码启用CNZZ统计，注意不要添加站点id，填了的话就不显示图标了。<br>1<br>2<h2 id="Analytics"><a href="#Analytics" class="headerlink" title="Analytics"></a>Analytics</h2>cnzz_tongji: true<br>三、购买和绑定顶级域名（可选）<br>　　域名的购买多数人都推荐在Godaddy购买，我的qjzhixing.com这个域名也是。名气较大，支持支付宝付款。解析和管理域名在Dnspod上面进行，两个都需要注册，这个简单不用说，说下实现域名绑定的过程。<br>1.把购买好的域名添加到Dnspod里面，得到两个默认的NS地址，此时顺便添加以下A记录，主机记录有两个：@和www，记录类型默认A，而且记录值都一样，填写192.30.252.153；</li>
+<li>hexo-generator-baidu-sitemap<br>　　对于百度地图，还需要添加<br>1<br>2<br>3<br>#sitemap<br>baidusitemap:<br>  path: baidusitemap.xm<br>　　添加好了之后，测试一下RSS和百度地图是否生效，百度地图是访问qjzhixing.com/sitemap.xml可以查看，如果能正常访问说明可用。<br>3.添加『CNZZ统计/百度统计』<br>　　CNZZ统计和百度统计都不算是Hexo的插件，但我个人觉得还是充当了插件的作用，所以就放在了这里。做法是先注册账号，然后添加网址就设置好了。CNZZ和百度统计的设置和做法相似，两种统计我都有测试过，没有问题。是先试过百度的，然后转换到了CNZZ上，所以就那CNZZ作为例子说明一下。<br>1.在CNZZ网站注册一个账号，添加网站后，得到各个形式的代码，任选其一；<br>2.在D:\Hexo\themes\jacman\layout_partial文件夹下新建一个cnzz_tongji.ejs文件，把你的代码粘贴在第一行和最后一行之间（中间是我的，替换成你自己的）；<br>1<br>2<br>3<br>4<br>5<br>6<br>&lt;% if (theme.cnzz){ %&gt;<br><script type="text/javascript"><br>  var cnzz_protocol = ((“https:” == document.location.protocol) ? “ https://“ : “ http://“);<br>  document.write(unescape(“%3Cspan id=’cnzz_stat_icon_1256211004’%3E%3C/span%3E%3Cscript src=’” + cnzz_protocol + “s95.cnzz.com/z_stat.php%3Fid%3D1256211004%26show%3Dpic’ type=’text/javascript’%3E%3C/script%3E”));<br></script><br>&lt;% } %&gt;<br>3.在footer.ejs文件中适当的位置添加你的代码，这是我的代码；<br>1<br>2<br>3<br>4<br><script type="text/javascript"><br>  var cnzz_protocol = ((“https:” == document.location.protocol) ? “ https://“ : “ http://“);<br>  document.write(unescape(“%3Cspan id=’cnzz_stat_icon_1256211004’%3E%3C/span%3E%3Cscript src=’” + cnzz_protocol + “s95.cnzz.com/z_stat.php%3Fid%3D1256211004%26show%3Dpic’ type=’text/javascript’%3E%3C/script%3E”));<br></script><br>4.在主题配置文件中加入下面代码启用CNZZ统计，注意不要添加站点id，填了的话就不显示图标了。<br>1<br>2<h2 id="Analytics"><a href="#Analytics" class="headerlink" title="Analytics"></a>Analytics</h2>cnzz_tongji: true</li>
 </ul>
-<p>2.使用Dnspod解析域名的话，就要将GoDaddy的NS设置为Dnspod提供的地址。做法是在GoDaddy的Nameservers里面添加Dnspod的NS，也就是图中中间的那两个记录值。</p>
-<p>3.在博客的D:\Hexo\source目录下，新建名为CNAME的文本文件，没有后缀，在里面添加你的域名。比如我的就是qjzhixing.com，如果你想用www.qjzhixing.com域名就在里面填相应的域名。添加之后尽量就不要改了。<br>1<br>qjzhixing.com<br>　　注意，绑定好了有可能还需要等待一段时间才能生效。我绑定域名的过程进展不是那么的顺利，原因是收不到GoDaddy的验证邮件。没有验证邮件是无法添加Dnspod的NS地址的，也就不能实现绑定。试过QQ邮箱、163邮箱，最后换到了Gmail邮箱都不行，奇怪的是，自己注册和买域名的时候能受到邮件，但是就是验证邮件收不到，垃圾箱里面也没有。没有办法，只得在网上找GoDaddy的客服，等待了11分钟之后客服回话了，给重新发了一封验证邮件，问题终于解决了。所以，如果遇到什么问题，还是要找对Keyman。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -159,23 +156,7 @@
 
 	
 <section class="comment">
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="请将此处替换成文章在你的站点中的ID" data-title="请替换成文章的标题" data-url="请替换成文章的网址"></div>
-<!-- 多说评论框 end -->
-<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
-var duoshuoQuery = {short_name:"ljaer"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-<!-- 多说公共JS代码 end -->
-
+	<div class="ds-thread"></div>
 </section>
 
 </div>  
@@ -338,7 +319,7 @@ $(document).ready(function(){
 
 
 <script type="text/javascript">
-  var duoshuoQuery = {short_name:"zk"};
+  var duoshuoQuery = {short_name:"ljaer"};
   (function() {
     var ds = document.createElement('script');
     ds.type = 'text/javascript';ds.async = true;
